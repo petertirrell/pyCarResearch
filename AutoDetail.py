@@ -49,12 +49,15 @@ class AutoDetail(object):
             self.year = str(my_style['year']['year'])
             self.name = my_style['name']
             self.baseMSRP = my_style['price']['baseMSRP']
-            self.engine_horsepower = my_style['engine']['horsepower']
-            self.engine_torque = my_style['engine']['torque']
+            
+            if my_style['engine'].has_key('horsepower'):
+                self.engine_horsepower = my_style['engine']['horsepower']
+            if my_style['engine'].has_key('torque'):
+                self.engine_torque = my_style['engine']['torque']
             self.engine_type = my_style['engine']['type']
 
-        details = get_other_details(style_id)
         time.sleep(1)
+        details = get_other_details(style_id)        
 
         if details:
             for each in details['equipment']:
