@@ -8,7 +8,7 @@ from AutoDetail import AutoDetail, MyEncoder
 
 from api import *
 
-OUTPUT_CSV_NAME = 'exported_auto_data.csv'
+OUTPUT_CSV_NAME = 'exported_auto_data2.csv'
 
 def write_csv_file(filename, list_of_autodetails):
     with open(filename, 'wb+') as f:
